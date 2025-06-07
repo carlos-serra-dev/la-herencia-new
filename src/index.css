@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("./assets/fonts/helvetica-neue/HelveticaNeueMedium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("./assets/fonts/helvetica-neue/HelveticaNeueBold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("./assets/fonts/helvetica-neue/HelveticaNeueBlack.otf")
+    format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@theme {
+  --color-yellow-custom: #fbebdb;
+  --color-red-custom: #e00614;
+  --color-white-custom: #fefefe;
+  --font-helvetica: "Helvetica Neue", sans-serif;
+}
+
+body {
+  @apply bg-yellow-custom text-red-custom font-helvetica;
+}
