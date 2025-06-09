@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 
-export default function EventLogo() {
+interface EventLogoProps {
+  onClick?: () => void;
+}
+
+export default function EventLogo({ onClick }: EventLogoProps) {
   return (
     <motion.img
       src="/images/alma-de-feria.png"
@@ -8,6 +12,8 @@ export default function EventLogo() {
       animate={{ scale: 1 }}
       transition={{ type: "spring", stiffness: 400, damping: 20}}
       alt="ALMA DE FERIA"
+      onClick={onClick}
+      className={onClick ? "cursor-pointer hover:opacity-80 transition-opacity" : ""}
     />
   );
 }

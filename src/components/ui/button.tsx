@@ -1,9 +1,10 @@
-export default function Button({ children, className }: ButtonProps) {
+export default function Button({ children, className, ...props }: ButtonProps) {
   return (
     <button
       className={`bg-white-custom items-center flex gap-1 p-4 rounded-full border-[1px] ${
         className || ""
       }`}
+      {...props}
     >
       {children}
     </button>
@@ -13,4 +14,4 @@ export default function Button({ children, className }: ButtonProps) {
 type ButtonProps = {
   children: React.ReactNode;
   className?: string;
-};
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;

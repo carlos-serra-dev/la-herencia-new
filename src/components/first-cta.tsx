@@ -1,7 +1,11 @@
 import Button from "./ui/button";
 import { ArrowDownRight } from "lucide-react";
 
-export default function FirstCta() {
+interface FirstCtaProps {
+  onBuyTickets: () => void;
+}
+
+export default function FirstCta({ onBuyTickets }: FirstCtaProps) {
   return (
     <section className="border-y-[1px] mt-8">
       <div className="flex">
@@ -23,7 +27,7 @@ export default function FirstCta() {
         </div>
 
         <div className="sm:w-4/12 flex items-center pb-6 sm:p-6">
-          <Button>
+          <Button onClick={onBuyTickets}>
             COMPRAR ENTRADAS <ArrowDownRight />
           </Button>
         </div>
