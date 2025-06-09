@@ -2,6 +2,16 @@ import { ArrowDownRight } from "lucide-react";
 import Button from "./ui/button";
 
 export default function Menu() {
+  const handleDownloadMenu = () => {
+    // Crear un enlace temporal para descargar el archivo
+    const link = document.createElement('a');
+    link.href = '/menu.jpg';
+    link.download = 'menu-alma-de-feria.jpg';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <section className="hidden lg:flex gap-10 mt-20">
@@ -23,7 +33,7 @@ export default function Menu() {
               Choquito de trasmayo <br />
               Cazón de poniente <br /> Taquitos de dorada al limón <br /> Galeta
               de gruñón estofada <br /> Rabo de toro Santa Rosalía <br /> Arroz
-              con carabineros “Edu Torres” <br /> <br /> POSTRE
+              con carabineros "Edu Torres" <br /> <br /> POSTRE
               <br /> Delicatessen de nuestro maestro pastelero Martín Rivera
             </p>
           </div>
@@ -45,7 +55,7 @@ export default function Menu() {
               </p>
             </div>
 
-            <Button className="text-sm mt-10 ml-10">
+            <Button className="text-sm mt-10 ml-10" onClick={handleDownloadMenu}>
               DESCARGAR MENÚ <br /> DEL EVENTO AQUÍ <ArrowDownRight />
             </Button>
           </div>
@@ -77,7 +87,7 @@ export default function Menu() {
               Choquito de trasmayo <br />
               Cazón de poniente <br /> Taquitos de dorada al limón <br /> Galeta
               de gruñón estofada <br /> Rabo de toro Santa Rosalía <br /> Arroz
-              con carabineros “Edu Torres” <br /> <br /> POSTRE
+              con carabineros "Edu Torres" <br /> <br /> POSTRE
               <br /> Delicatessen de nuestro maestro pastelero Martín Rivera
             </p>
           </div>
