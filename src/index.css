@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Helvetica Neue";
-  src: url("./assets/fonts/helvetica-neue/HelveticaNeueMedium.ttf")
+  src: url("/fonts/helvetica-neue/HelveticaNeueMedium.ttf")
     format("truetype");
   font-weight: 500;
   font-style: normal;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "Helvetica Neue";
-  src: url("./assets/fonts/helvetica-neue/HelveticaNeueBold.ttf")
+  src: url("/fonts/helvetica-neue/HelveticaNeueBold.ttf")
     format("truetype");
   font-weight: 700;
   font-style: normal;
@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: "Helvetica Neue";
-  src: url("./assets/fonts/helvetica-neue/HelveticaNeueBlack.otf")
+  src: url("/fonts/helvetica-neue/HelveticaNeueBlack.otf")
     format("opentype");
   font-weight: 900;
   font-style: normal;

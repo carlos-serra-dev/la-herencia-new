@@ -1,40 +1,25 @@
-import logoDeNorteASur from "../assets/images/logo-de-norte-a-sur.png";
-import logoEsfering from "../assets/images/logo-esfering.png";
-import logoFrostalia from "../assets/images/logo-frostalia.png";
-import logoFundacionDarsdesi from "../assets/images/logo-fundacion-darsdesi.png";
-import logoGrupoBrumas from "../assets/images/logo-grupo-brumas.png";
-import logoGrupoPericales from "../assets/images/logo-grupo-pericales.png";
-import logoHeineken from "../assets/images/logo-heineken.png";
-import logoJaula from "../assets/images/logo-jaula.png";
-import logoLaHerencia from "../assets/images/logo-la-herencia.png";
-import logoMartaRodriguez from "../assets/images/logo-marta-rodriguez.png";
-import logoMercedesBenzDimovil from "../assets/images/logo-mercedes-benz-dimovil.png";
-import logoPrometeo from "../assets/images/logo-prometeo.png";
-import logoRoyalBliss from "../assets/images/logo-royal-bliss.png";
-import logoTioPepe from "../assets/images/logo-tio-pepe.png";
-
 const Partners = () => {
   const firstRowLogos = [
-    { src: logoDeNorteASur, alt: "De Norte a Sur" },
-    { src: logoEsfering, alt: "Esfering" },
-    { src: logoFrostalia, alt: "Frostalia" },
-    { src: logoFundacionDarsdesi, alt: "Fundación Darsdesi" },
-    { src: logoGrupoBrumas, alt: "Grupo Brumas" },
+    { src: "/images/logo-de-norte-a-sur.png", alt: "De Norte a Sur" },
+    { src: "/images/logo-esfering.png", alt: "Esfering" },
+    { src: "/images/logo-frostalia.png", alt: "Frostalia" },
+    { src: "/images/logo-fundacion-darsdesi.png", alt: "Fundación Darsdesi" },
+    { src: "/images/logo-grupo-brumas.png", alt: "Grupo Brumas" },
   ];
 
   const secondRowLogos = [
-    { src: logoGrupoPericales, alt: "Grupo Pericales" },
-    { src: logoHeineken, alt: "Heineken" },
-    { src: logoJaula, alt: "Jaula" },
-    { src: logoLaHerencia, alt: "La Herencia" },
+    { src: "/images/logo-grupo-pericales.png", alt: "Grupo Pericales" },
+    { src: "/images/logo-heineken.png", alt: "Heineken" },
+    { src: "/images/logo-jaula.png", alt: "Jaula" },
+    { src: "/images/logo-la-herencia.png", alt: "La Herencia" },
   ];
 
   const thirdRowLogos = [
-    { src: logoMartaRodriguez, alt: "Marta Rodríguez" },
-    { src: logoMercedesBenzDimovil, alt: "Mercedes Benz Dimovil" },
-    { src: logoPrometeo, alt: "Prometeo" },
-    { src: logoRoyalBliss, alt: "Royal Bliss" },
-    { src: logoTioPepe, alt: "Tío Pepe" },
+    { src: "/images/logo-marta-rodriguez.png", alt: "Marta Rodríguez" },
+    { src: "/images/logo-mercedes-benz-dimovil.png", alt: "Mercedes Benz Dimovil" },
+    { src: "/images/logo-prometeo.png", alt: "Prometeo" },
+    { src: "/images/logo-royal-bliss.png", alt: "Royal Bliss" },
+    { src: "/images/logo-tio-pepe.png", alt: "Tío Pepe" },
   ];
 
   return (

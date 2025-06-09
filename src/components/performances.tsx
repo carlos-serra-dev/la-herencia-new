@@ -74,26 +74,26 @@ export default function Performances() {
 const PERFORMANCES = [
   {
     name: "CUADRO FLAMENCO JESÚS QUILES",
-    image: "src/assets/images/cuadro-flamenco-jesus-quiles.jpg",
+    image: "/images/cuadro-flamenco-jesus-quiles.jpg",
   },
   {
     name: "DE NORTE A SUR",
-    image: "src/assets/images/de-norte-a-sur.jpg",
+    image: "/images/de-norte-a-sur.jpg",
   },
   {
     name: "DJ",
-    image: "src/assets/images/dj.jpg",
+    image: "/images/dj.jpg",
   },
   {
     name: "GRUPO BRUMAS",
-    image: "src/assets/images/grupo-brumas.jpg",
+    image: "/images/grupo-brumas.jpg",
   },
   {
     name: "JAUJA ESPECTÁCULOS",
-    image: "src/assets/images/jauja-espectaculos.png",
+    image: "/images/jauja-espectaculos.png",
   },
   {
     name: "MARTA RODRÍGUEZ",
-    image: "src/assets/images/marta-rodriguez.jpg",
+    image: "/images/marta-rodriguez.jpg",
   },
 ];
