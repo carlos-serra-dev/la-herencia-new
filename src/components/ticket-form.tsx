@@ -15,12 +15,10 @@ export default function TicketForm({ onBack }: TicketFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí iría la lógica de envío del formulario
     console.log("Formulario enviado");
   };
 
   useEffect(() => {
-    // Scroll automático al formulario cuando se monta el componente
     if (formRef.current) {
       formRef.current.scrollIntoView({ behavior: "smooth" });
     }
@@ -32,15 +30,16 @@ export default function TicketForm({ onBack }: TicketFormProps) {
       <EventLogo onClick={onBack} />
       <EventDetails />
 
-      {/* Formulario principal */}
       <section ref={formRef} className="border-y-[1px] mt-8 py-8 px-6">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-bold text-red-600 mb-6 text-center">
             ESTÁS A UN PASO DE CONSEGUIR TUS ENTRADAS.
           </h1>
-          
+
           <p className="text-lg mb-8 text-center text-red-600">
-            Completa el siguiente formulario con tus datos. Una vez enviado, recibirás un correo con la información necesaria para poder realizar el pago y finalizar la compra.
+            Completa el siguiente formulario con tus datos. Una vez enviado,
+            recibirás un correo con la información necesaria para poder realizar
+            el pago y finalizar la compra.
           </p>
 
           <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
@@ -48,6 +47,7 @@ export default function TicketForm({ onBack }: TicketFormProps) {
               <label className="block text-xl font-bold text-red-600 mb-2">
                 NOMBRE Y APELLIDOS
               </label>
+
               <input
                 type="text"
                 required
@@ -59,6 +59,7 @@ export default function TicketForm({ onBack }: TicketFormProps) {
               <label className="block text-xl font-bold text-red-600 mb-2">
                 EMAIL
               </label>
+
               <input
                 type="email"
                 required
@@ -70,6 +71,7 @@ export default function TicketForm({ onBack }: TicketFormProps) {
               <label className="block text-xl font-bold text-red-600 mb-2">
                 TELÉFONO
               </label>
+
               <input
                 type="tel"
                 required
@@ -81,6 +83,7 @@ export default function TicketForm({ onBack }: TicketFormProps) {
               <label className="block text-xl font-bold text-red-600 mb-2">
                 Nº ENTRADAS
               </label>
+
               <input
                 type="number"
                 min="1"
@@ -94,7 +97,7 @@ export default function TicketForm({ onBack }: TicketFormProps) {
               <Button type="submit" className="text-lg">
                 ENVIAR <ArrowDownRight />
               </Button>
-              
+
               <p className="text-xl font-bold text-red-600">
                 ¡TE ESPERAMOS EL 28 DE JUNIO!
               </p>
@@ -103,7 +106,6 @@ export default function TicketForm({ onBack }: TicketFormProps) {
         </div>
       </section>
 
-      {/* Section de fecha y hora */}
       <section className="flex gap-6 items-center justify-around text-center mt-6 pb-6 flex-wrap border-b-[1px]">
         <p className="text-center font-bold text-2xl tracking-widest">28 JUN</p>
 
@@ -118,4 +120,4 @@ export default function TicketForm({ onBack }: TicketFormProps) {
       <Partners />
     </>
   );
-} 
+}

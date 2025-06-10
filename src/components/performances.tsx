@@ -7,7 +7,7 @@ export default function Performances() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     slidesToScroll: 1,
-    loop: false,
+    loop: true,
   });
 
   const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -53,7 +53,10 @@ export default function Performances() {
       >
         <div className="flex gap-2">
           {PERFORMANCES.map((performance, index) => (
-            <div className="flex-none w-full md:w-1/2" key={index}>
+            <div
+              className={`flex-none w-full md:w-1/2 ${index === 0 && "ml-2"}`}
+              key={index}
+            >
               <div className="rounded-lg overflow-hidden">
                 <img
                   className="aspect-auto"

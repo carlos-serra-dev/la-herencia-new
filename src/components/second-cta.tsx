@@ -11,15 +11,15 @@ export default function SecondCta({ onBuyTickets }: SecondCtaProps) {
       <section className="flex flex-col md:flex-row mt-20 border-y-[1px]">
         <div className="md:w-1/2 p-6 md:border-r-[1px]">
           <p className="text-lg font-bold">
-            LA ENTRADA SOLIDARIA TIENE UN COSTE DE 60€ POR PERSONA E INCLUYE
-            MARIDAJE CON: REBUJITO, CROFT SODA, LICOR 43 Y GINGER
+            EL MENÚ SOLIDARIO TIENE UN COSTE DE <br />
+            <u>60€ POR PERSONA</u>
           </p>
 
           <br />
 
           <p>
-            LAS BEBIDAS NO INCLUIDAS EN ESTA SECCIÓN DEBERÁN ABONARSE POR
-            SEPARADO
+            UNA VEZ FINALIZADO EL MENÚ, TODAS LAS BEBIDAS DEBERÁN ABONARSE POR
+            SEPARADO, NO ESTÁN INCLUIDAS EN EL PRECIO DE ENTRADA.
           </p>
         </div>
 

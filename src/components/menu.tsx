@@ -4,9 +4,9 @@ import Button from "./ui/button";
 export default function Menu() {
   const handleDownloadMenu = () => {
     // Crear un enlace temporal para descargar el archivo
-    const link = document.createElement('a');
-    link.href = '/menu.jpg';
-    link.download = 'menu-alma-de-feria.jpg';
+    const link = document.createElement("a");
+    link.href = "/menu.jpg";
+    link.download = "menu-alma-de-feria.jpg";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -23,19 +23,30 @@ export default function Menu() {
           <div className="rounded-xl py-5 px-10 border-[1px]">
             <h2 className="font-bold text-lg">Alma</h2>
 
-            <p className="ml-4 mt-2">
-              Jamón de cebo de campo a cuchillo de Rentero <br /> Lomo ibérico
-              al corte de la berkel <br /> Salmorejo y gazpacho con airbag de
-              Jesús <br /> Panipuri de rusa con su cantabrico <br /> Camarones
-              de la isla cocidos <br /> Tartar de cerdo de mar y tierra <br />{" "}
-              Croqueta de puchero de la abuela <br /> Caballitos rocinantes{" "}
-              <br />
-              Choquito de trasmayo <br />
-              Cazón de poniente <br /> Taquitos de dorada al limón <br /> Galeta
-              de gruñón estofada <br /> Rabo de toro Santa Rosalía <br /> Arroz
-              con carabineros "Edu Torres" <br /> <br /> POSTRE
-              <br /> Delicatessen de nuestro maestro pastelero Martín Rivera
-            </p>
+            <ul className="ml-4 mt-2 list-none">
+              <li className="list-disc">
+                Jamón de cebo de campo a cuchillo de Rentero
+              </li>
+              <li className="list-disc">Lomo ibérico al corte de la berkel</li>
+              <li className="list-disc">
+                Salmorejo y gazpacho con airbag de Jesús
+              </li>
+              <li className="list-disc">Panipuri de rusa con su cantabrico</li>
+              <li className="list-disc">Camarones de la isla cocidos</li>
+              <li className="list-disc">Tartar de cerdo de mar y tierra</li>
+              <li className="list-disc">Croqueta de puchero de la abuela</li>
+              <li className="list-disc">Caballitos rocinantes</li>
+              <li className="list-disc">Choquito de trasmayo</li>
+              <li className="list-disc">Cazón de poniente</li>
+              <li className="list-disc">Taquitos de dorada al limón</li>
+              <li className="list-disc">Galeta de gruñón estofada</li>
+              <li className="list-disc">Rabo de toro Santa Rosalía</li>
+              <li className="list-disc">Arroz con carabineros "Edu Torres"</li>
+              <h2 className="list-disc font-bold mt-2">POSTRE</h2>
+              <p className="list-disc">
+                Delicatessen de nuestro maestro pastelero Martín Rivera
+              </p>
+            </ul>
           </div>
 
           <p className="mt-5">
@@ -48,14 +59,24 @@ export default function Menu() {
             <div className="bg-yellow-custom rounded-xl py-5 px-10 border-[1px]">
               <h2 className="font-bold text-lg">Nanci 25</h2>
 
-              <p className="ml-4 mt-2">
-                Salazón <br /> Encurtidos <br /> Papas Parlamento <br />{" "}
-                Rebujitos <br /> Croft Soda/ Tío Pepe <br />
-                Licor 43 Ginger
-              </p>
+              <ul className="ml-4 mt-2 list-none">
+                <li className="list-disc">Salazón</li>
+                <li className="list-disc">Encurtidos</li>
+                <li className="list-disc">Papas Parlamento</li>
+                <li className="list-disc">Rebujitos</li>
+                <li className="list-disc">
+                  Croft Twist Fino Spritz / Tío Pepe
+                </li>
+                <li className="list-disc">Agua</li>
+                <li className="list-disc">Refrescos</li>
+                <li className="list-disc">Cerveza</li>
+              </ul>
             </div>
 
-            <Button className="text-sm mt-10 ml-10" onClick={handleDownloadMenu}>
+            <Button
+              className="text-sm mt-10 ml-10"
+              onClick={handleDownloadMenu}
+            >
               DESCARGAR MENÚ <br /> DEL EVENTO AQUÍ <ArrowDownRight />
             </Button>
           </div>
@@ -67,29 +88,45 @@ export default function Menu() {
           <div className="rounded-xl w-fit py-5 px-10 border-[1px]">
             <h2 className="font-bold text-lg">Nanci 25</h2>
 
-            <p className="ml-4 mt-2">
-              Salazón <br /> Encurtidos <br /> Papas Parlamento <br /> Rebujitos{" "}
-              <br /> Croft Soda/ Tío Pepe <br />
-              Licor 43 Ginger
-            </p>
+            <ul className="ml-4 mt-2 list-none">
+              <li className="list-disc">Salazón</li>
+              <li className="list-disc">Encurtidos</li>
+              <li className="list-disc">Papas Parlamento</li>
+              <li className="list-disc">Rebujitos</li>
+              <li className="list-disc">Croft Twist Fino Spritz / Tío Pepe</li>
+              <li className="list-disc">Agua</li>
+              <li className="list-disc">Refrescos</li>
+              <li className="list-disc">Cerveza</li>
+            </ul>
           </div>
 
           <div className="rounded-xl w-fit py-5 px-10 border-[1px]">
             <h2 className="font-bold text-lg">Alma</h2>
 
-            <p className="ml-4 mt-2">
-              Jamón de cebo de campo a cuchillo de Rentero <br /> Lomo ibérico
-              al corte de la berkel <br /> Salmorejo y gazpacho con airbag de
-              Jesús <br /> Panipuri de rusa con su cantabrico <br /> Camarones
-              de la isla cocidos <br /> Tartar de cerdo de mar y tierra <br />{" "}
-              Croqueta de puchero de la abuela <br /> Caballitos rocinantes{" "}
-              <br />
-              Choquito de trasmayo <br />
-              Cazón de poniente <br /> Taquitos de dorada al limón <br /> Galeta
-              de gruñón estofada <br /> Rabo de toro Santa Rosalía <br /> Arroz
-              con carabineros "Edu Torres" <br /> <br /> POSTRE
-              <br /> Delicatessen de nuestro maestro pastelero Martín Rivera
-            </p>
+            <ul className="ml-4 mt-2 list-none">
+              <li className="list-disc">
+                Jamón de cebo de campo a cuchillo de Rentero
+              </li>
+              <li className="list-disc">Lomo ibérico al corte de la berkel</li>
+              <li className="list-disc">
+                Salmorejo y gazpacho con airbag de Jesús
+              </li>
+              <li className="list-disc">Panipuri de rusa con su cantabrico</li>
+              <li className="list-disc">Camarones de la isla cocidos</li>
+              <li className="list-disc">Tartar de cerdo de mar y tierra</li>
+              <li className="list-disc">Croqueta de puchero de la abuela</li>
+              <li className="list-disc">Caballitos rocinantes</li>
+              <li className="list-disc">Choquito de trasmayo</li>
+              <li className="list-disc">Cazón de poniente</li>
+              <li className="list-disc">Taquitos de dorada al limón</li>
+              <li className="list-disc">Galeta de gruñón estofada</li>
+              <li className="list-disc">Rabo de toro Santa Rosalía</li>
+              <li className="list-disc">Arroz con carabineros "Edu Torres"</li>
+              <h2 className="list-disc font-bold mt-2">POSTRE</h2>
+              <p className="list-disc">
+                Delicatessen de nuestro maestro pastelero Martín Rivera
+              </p>
+            </ul>
           </div>
 
           <p className="font-bold">MENÚ ALMA DE FERIA: 58€</p>
