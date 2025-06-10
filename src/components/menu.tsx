@@ -77,15 +77,18 @@ export default function Menu() {
               className="text-sm mt-10 ml-10"
               onClick={handleDownloadMenu}
             >
-              DESCARGAR MENÚ <br /> DEL EVENTO AQUÍ <ArrowDownRight />
+              DESCARGAR MENÚ <br /> DEL EVENTO AQUÍ{" "}
+              <ArrowDownRight width={40} height={40} strokeWidth={1} />
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="flex lg:hidden gap-5 mt-20 justify-between">
-        <div className="flex flex-col gap-5">
-          <div className="rounded-xl w-fit py-5 px-10 border-[1px]">
+      <section className="flex lg:hidden gap-5 mt-20">
+        <div className="flex w-full flex-col gap-5">
+          <h1 className="text-8xl font-black tracking-widest">MENÚ</h1>
+
+          <div className="rounded-xl py-5 px-10 border-[1px]">
             <h2 className="font-bold text-lg">Nanci 25</h2>
 
             <ul className="ml-4 mt-2 list-none">
@@ -100,7 +103,7 @@ export default function Menu() {
             </ul>
           </div>
 
-          <div className="rounded-xl w-fit py-5 px-10 border-[1px]">
+          <div className="rounded-xl py-5 px-10 border-[1px]">
             <h2 className="font-bold text-lg">Alma</h2>
 
             <ul className="ml-4 mt-2 list-none">
@@ -129,24 +132,16 @@ export default function Menu() {
             </ul>
           </div>
 
-          <p className="font-bold">MENÚ ALMA DE FERIA: 58€</p>
+          <Button className="text-sm mt-10 w-fit" onClick={handleDownloadMenu}>
+            DESCARGAR MENÚ <br /> DEL EVENTO AQUÍ{" "}
+            <ArrowDownRight width={40} height={40} strokeWidth={1} />
+          </Button>
 
           <p className="mt-5">
             Además del menú, habrá más sorpresas a lo largo del evento. <br />{" "}
             Y, por supuesto, para los más fiesteros, contaremos con snacks fríos
             <br /> para reponer fuerzas y seguir bailando.
           </p>
-        </div>
-
-        <div className="flex flex-col gap-2 items-center">
-          <h1 className="text-8xl font-black tracking-widest [writing-mode:vertical-rl]">
-            MENÚ
-          </h1>
-
-          <div className="flex gap-0.5 h-full">
-            <div className="w-1 border-r-[1px] h-full"></div>
-            <div className="w-1 border-r-[1px] h-full"></div>
-          </div>
         </div>
       </section>
     </>

@@ -16,7 +16,10 @@ const Partners = () => {
 
   const thirdRowLogos = [
     { src: "/images/logo-marta-rodriguez.png", alt: "Marta Rodríguez" },
-    { src: "/images/logo-mercedes-benz-dimovil.png", alt: "Mercedes Benz Dimovil" },
+    {
+      src: "/images/logo-mercedes-benz-dimovil.png",
+      alt: "Mercedes Benz Dimovil",
+    },
     { src: "/images/logo-prometeo.png", alt: "Prometeo" },
     { src: "/images/logo-royal-bliss.png", alt: "Royal Bliss" },
     { src: "/images/logo-tio-pepe.png", alt: "Tío Pepe" },
@@ -41,7 +44,6 @@ const Partners = () => {
             ))}
           </div>
 
-          {/* Segunda fila - 4 logos */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 items-center justify-items-center max-w-4xl mx-auto">
             {secondRowLogos.map((logo, index) => (
               <div
@@ -57,7 +59,6 @@ const Partners = () => {
             ))}
           </div>
 
-          {/* Tercera fila - 5 logos */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center">
             {thirdRowLogos.map((logo, index) => (
               <div

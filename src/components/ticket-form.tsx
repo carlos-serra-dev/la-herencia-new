@@ -95,7 +95,7 @@ export default function TicketForm({ onBack }: TicketFormProps) {
 
             <div className="flex flex-col sm:flex-row items-center gap-6 pt-8">
               <Button type="submit" className="text-lg">
-                ENVIAR <ArrowDownRight />
+                ENVIAR <ArrowDownRight width={40} height={40} strokeWidth={1} />
               </Button>
 
               <p className="text-xl font-bold text-red-600">

@@ -26,7 +26,8 @@ export default function FirstCta() {
         <div className="sm:w-4/12 flex items-center pb-6 sm:p-6">
           <Link to="/comprar-entradas">
             <Button>
-              COMPRAR ENTRADAS <ArrowDownRight />
+              COMPRAR ENTRADAS{" "}
+              <ArrowDownRight width={40} height={40} strokeWidth={1} />
             </Button>
           </Link>
         </div>
