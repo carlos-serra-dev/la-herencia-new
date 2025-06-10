@@ -1,11 +1,8 @@
 import { ArrowDownRight } from "lucide-react";
 import Button from "./ui/button";
+import { Link } from "react-router";
 
-interface SecondCtaProps {
-  onBuyTickets: () => void;
-}
-
-export default function SecondCta({ onBuyTickets }: SecondCtaProps) {
+export default function SecondCta() {
   return (
     <>
       <section className="flex flex-col md:flex-row mt-20 border-y-[1px]">
@@ -24,9 +21,11 @@ export default function SecondCta({ onBuyTickets }: SecondCtaProps) {
         </div>
 
         <div className="flex items-center justify-center pb-6 md:pb-0 md:w-1/2">
-          <Button className="text-lg font-bold" onClick={onBuyTickets}>
-            COMPRAR ENTRADAS <ArrowDownRight />
-          </Button>
+          <Link to="/comprar-entradas">
+            <Button className="text-lg font-bold">
+              COMPRAR ENTRADAS <ArrowDownRight />
+            </Button>
+          </Link>
         </div>
       </section>
 
