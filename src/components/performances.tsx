@@ -43,7 +43,9 @@ export default function Performances() {
 
   return (
     <section>
-      <h1 className="font-bold text-3xl mb-8">ACTUACIONES</h1>
+      <h1 className="font-black font-stretch-condensed text-3xl mb-8 tracking-widest">
+        ACTUACIONES
+      </h1>
 
       <div
         className="overflow-hidden"
@@ -59,12 +61,14 @@ export default function Performances() {
             >
               <div className="rounded-lg overflow-hidden">
                 <img
-                  className="aspect-auto"
+                  className="aspect-auto border rounded-lg"
                   src={performance.image}
                   alt={performance.name}
                 />
 
-                <h1 className="mt-2 text-xs">{performance.name}</h1>
+                <h1 className="mt-2 text-xs font-semibold tracking-widest">
+                  {performance.name}
+                </h1>
               </div>
             </div>
           ))}

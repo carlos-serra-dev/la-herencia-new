@@ -21,55 +21,73 @@ export default function Menu() {
 
         <div className="flex flex-col relative w-7/12">
           <div className="rounded-xl py-5 px-10 border-[1px]">
-            <h2 className="font-bold text-lg">Alma</h2>
+            <h2 className="font-bold text-lg">ALMA</h2>
 
             <ul className="ml-4 mt-2 list-none">
-              <li className="list-disc">
+              <li className="list-disc font-medium">
                 Jamón de cebo de campo a cuchillo de Rentero
               </li>
-              <li className="list-disc">Lomo ibérico al corte de la berkel</li>
-              <li className="list-disc">
+              <li className="list-disc font-medium">
+                Lomo ibérico al corte de la berkel
+              </li>
+              <li className="list-disc font-medium">
                 Salmorejo y gazpacho con airbag de Jesús
               </li>
-              <li className="list-disc">Panipuri de rusa con su cantabrico</li>
-              <li className="list-disc">Camarones de la isla cocidos</li>
-              <li className="list-disc">Tartar de cerdo de mar y tierra</li>
-              <li className="list-disc">Croqueta de puchero de la abuela</li>
-              <li className="list-disc">Caballitos rocinantes</li>
-              <li className="list-disc">Choquito de trasmayo</li>
-              <li className="list-disc">Cazón de poniente</li>
-              <li className="list-disc">Taquitos de dorada al limón</li>
-              <li className="list-disc">Galeta de gruñón estofada</li>
-              <li className="list-disc">Rabo de toro Santa Rosalía</li>
-              <li className="list-disc">Arroz con carabineros "Edu Torres"</li>
-              <h2 className="list-disc font-bold mt-2">POSTRE</h2>
-              <p className="list-disc">
+              <li className="list-disc font-medium">
+                Panipuri de rusa con su cantabrico
+              </li>
+              <li className="list-disc font-medium">
+                Camarones de la isla cocidos
+              </li>
+              <li className="list-disc font-medium">
+                Tartar de cerdo de mar y tierra
+              </li>
+              <li className="list-disc font-medium">
+                Croqueta de puchero de la abuela
+              </li>
+              <li className="list-disc font-medium">Caballitos rocinantes</li>
+              <li className="list-disc font-medium">Choquito de trasmayo</li>
+              <li className="list-disc font-medium">Cazón de poniente</li>
+              <li className="list-disc font-medium">
+                Taquitos de dorada al limón
+              </li>
+              <li className="list-disc font-medium">
+                Galeta de gruñón estofada
+              </li>
+              <li className="list-disc font-medium">
+                Rabo de toro Santa Rosalía
+              </li>
+              <li className="list-disc font-medium">
+                Arroz con carabineros "Edu Torres"
+              </li>
+              <h2 className="list-disc font-medium mt-2">POSTRE</h2>
+              <p className="list-disc font-medium">
                 Delicatessen de nuestro maestro pastelero Martín Rivera
               </p>
             </ul>
           </div>
 
-          <p className="mt-5">
-            Además del menú, habrá más sorpresas a lo largo del evento. <br />{" "}
-            Y, por supuesto, para los más fiesteros, contaremos con snacks fríos
-            <br /> para reponer fuerzas y seguir bailando.
+          <p className="mt-5 font-medium">
+            Además del menú, habrá más sorpresas a lo largo del evento. Y, por
+            supuesto, para los más fiesteros, contaremos con snacks fríos para
+            reponer fuerzas y seguir bailando.
           </p>
 
           <div className="absolute -top-5 -right-56">
             <div className="bg-yellow-custom rounded-xl py-5 px-10 border-[1px]">
-              <h2 className="font-bold text-lg">Nanci 25</h2>
+              <h2 className="font-bold text-lg">NANCI 25</h2>
 
               <ul className="ml-4 mt-2 list-none">
-                <li className="list-disc">Salazón</li>
-                <li className="list-disc">Encurtidos</li>
-                <li className="list-disc">Papas Parlamento</li>
-                <li className="list-disc">Rebujitos</li>
-                <li className="list-disc">
+                <li className="list-disc font-medium">Salazón</li>
+                <li className="list-disc font-medium">Encurtidos</li>
+                <li className="list-disc font-medium">Papas Parlamento</li>
+                <li className="list-disc font-medium">Rebujitos</li>
+                <li className="list-disc font-medium">
                   Croft Twist Fino Spritz / Tío Pepe
                 </li>
-                <li className="list-disc">Agua</li>
-                <li className="list-disc">Refrescos</li>
-                <li className="list-disc">Cerveza</li>
+                <li className="list-disc font-medium">Agua</li>
+                <li className="list-disc font-medium">Refrescos</li>
+                <li className="list-disc font-medium">Cerveza</li>
               </ul>
             </div>
 
@@ -89,44 +107,64 @@ export default function Menu() {
           <h1 className="text-8xl font-black tracking-widest">MENÚ</h1>
 
           <div className="rounded-xl py-5 px-10 border-[1px]">
-            <h2 className="font-bold text-lg">Nanci 25</h2>
+            <h2 className="font-bold text-lg">NANCI 25</h2>
 
             <ul className="ml-4 mt-2 list-none">
-              <li className="list-disc">Salazón</li>
-              <li className="list-disc">Encurtidos</li>
-              <li className="list-disc">Papas Parlamento</li>
-              <li className="list-disc">Rebujitos</li>
-              <li className="list-disc">Croft Twist Fino Spritz / Tío Pepe</li>
-              <li className="list-disc">Agua</li>
-              <li className="list-disc">Refrescos</li>
-              <li className="list-disc">Cerveza</li>
+              <li className="list-disc font-medium">Salazón</li>
+              <li className="list-disc font-medium">Encurtidos</li>
+              <li className="list-disc font-medium">Papas Parlamento</li>
+              <li className="list-disc font-medium">Rebujitos</li>
+              <li className="list-disc font-medium">
+                Croft Twist Fino Spritz / Tío Pepe
+              </li>
+              <li className="list-disc font-medium">Agua</li>
+              <li className="list-disc font-medium">Refrescos</li>
+              <li className="list-disc font-medium">Cerveza</li>
             </ul>
           </div>
 
           <div className="rounded-xl py-5 px-10 border-[1px]">
-            <h2 className="font-bold text-lg">Alma</h2>
+            <h2 className="font-bold text-lg">ALMA</h2>
 
             <ul className="ml-4 mt-2 list-none">
-              <li className="list-disc">
+              <li className="list-disc font-medium">
                 Jamón de cebo de campo a cuchillo de Rentero
               </li>
-              <li className="list-disc">Lomo ibérico al corte de la berkel</li>
-              <li className="list-disc">
+              <li className="list-disc font-medium">
+                Lomo ibérico al corte de la berkel
+              </li>
+              <li className="list-disc font-medium">
                 Salmorejo y gazpacho con airbag de Jesús
               </li>
-              <li className="list-disc">Panipuri de rusa con su cantabrico</li>
-              <li className="list-disc">Camarones de la isla cocidos</li>
-              <li className="list-disc">Tartar de cerdo de mar y tierra</li>
-              <li className="list-disc">Croqueta de puchero de la abuela</li>
-              <li className="list-disc">Caballitos rocinantes</li>
-              <li className="list-disc">Choquito de trasmayo</li>
-              <li className="list-disc">Cazón de poniente</li>
-              <li className="list-disc">Taquitos de dorada al limón</li>
-              <li className="list-disc">Galeta de gruñón estofada</li>
-              <li className="list-disc">Rabo de toro Santa Rosalía</li>
-              <li className="list-disc">Arroz con carabineros "Edu Torres"</li>
-              <h2 className="list-disc font-bold mt-2">POSTRE</h2>
-              <p className="list-disc">
+              <li className="list-disc font-medium">
+                Panipuri de rusa con su cantabrico
+              </li>
+              <li className="list-disc font-medium">
+                Camarones de la isla cocidos
+              </li>
+              <li className="list-disc font-medium">
+                Tartar de cerdo de mar y tierra
+              </li>
+              <li className="list-disc font-medium">
+                Croqueta de puchero de la abuela
+              </li>
+              <li className="list-disc font-medium">Caballitos rocinantes</li>
+              <li className="list-disc font-medium">Choquito de trasmayo</li>
+              <li className="list-disc font-medium">Cazón de poniente</li>
+              <li className="list-disc font-medium">
+                Taquitos de dorada al limón
+              </li>
+              <li className="list-disc font-medium">
+                Galeta de gruñón estofada
+              </li>
+              <li className="list-disc font-medium">
+                Rabo de toro Santa Rosalía
+              </li>
+              <li className="list-disc font-medium">
+                Arroz con carabineros "Edu Torres"
+              </li>
+              <h2 className="list-disc font-medium mt-2">POSTRE</h2>
+              <p className="list-disc font-medium">
                 Delicatessen de nuestro maestro pastelero Martín Rivera
               </p>
             </ul>
@@ -137,7 +175,7 @@ export default function Menu() {
             <ArrowDownRight width={40} height={40} strokeWidth={1} />
           </Button>
 
-          <p className="mt-5">
+          <p className="mt-5 font-medium">
             Además del menú, habrá más sorpresas a lo largo del evento. Y, por
             supuesto, para los más fiesteros, contaremos con snacks fríos para
             reponer fuerzas y seguir bailando.

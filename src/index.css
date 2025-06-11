@@ -2,7 +2,87 @@
 
 @font-face {
   font-family: "Helvetica Neue";
-  src: url("/fonts/helvetica-neue/HelveticaNeueMedium.ttf")
+  src: url("/fonts/helvetica-neue/HelveticaNeue-01.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-Bold-02.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-Italic-03.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-BoldItalic-04.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-CondensedBold-05.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: condensed;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-UltraLight-06.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-UltraLightItalic-07.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-Light-08.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-LightItalic-09.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-CondensedBlack-10.ttf")
+    format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: condensed;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-Medium-11.ttf")
     format("truetype");
   font-weight: 500;
   font-style: normal;
@@ -10,18 +90,25 @@
 
 @font-face {
   font-family: "Helvetica Neue";
-  src: url("/fonts/helvetica-neue/HelveticaNeueBold.ttf")
+  src: url("/fonts/helvetica-neue/HelveticaNeue-MediumItalic-12.ttf")
     format("truetype");
-  font-weight: 700;
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-Thin-13.ttf") format("truetype");
+  font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Helvetica Neue";
-  src: url("/fonts/helvetica-neue/HelveticaNeueBlack.otf")
-    format("opentype");
-  font-weight: 900;
-  font-style: normal;
+  src: url("/fonts/helvetica-neue/HelveticaNeue-ThinItalic-14.ttf")
+    format("truetype");
+  font-weight: 100;
+  font-style: italic;
 }
 
 @theme {

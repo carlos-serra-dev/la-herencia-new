@@ -5,7 +5,7 @@ export default function EventDetails() {
         SÁBADO <br /> 28 DE JUNIO
       </p>
 
-      <p className="text-xs md:text-sm tracking-widest">
+      <p className="text-xs font-semibold tracking-widest">
         PRIMERA GALA BENÉFICA "ALMA DE FERIA"
       </p>
 
