@@ -1,0 +1,14 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+You are working inside a Vite‐based landing‐page project. The goal is to deploy a simple three‐page flow for an event registration. Here is the context you need to know:
+
+Overall Project
+
+This is a Vite project (e.g. initialized with npm init vite@latest) using React.
+
+
+
+The landing site already has most of its components and styling in place; you simply need to understand how the pages relate and what each one must accomplish.
