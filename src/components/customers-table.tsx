@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Search, Filter, Eye, CheckCircle, Calendar } from "lucide-react";
+import { Search, Filter, Eye, CheckCircle } from "lucide-react";
 import Button from "./ui/button";
 import TwoInitialLines from "./two-initial-lines";
 import EventLogo from "./event-logo";
