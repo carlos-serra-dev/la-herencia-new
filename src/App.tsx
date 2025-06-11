@@ -1,43 +1,20 @@
-import { useState } from "react";
-import EventActivity from "./components/event-activity";
-import EventActivityExtended from "./components/event-activity-extended";
-import EventDetails from "./components/event-details";
-import EventLogo from "./components/event-logo";
-import FirstCta from "./components/first-cta";
-import Menu from "./components/menu";
-import OneMiddleLine from "./components/one-middle-line";
-import Partners from "./components/Partners";
-import Performances from "./components/performances";
-import SecondCta from "./components/second-cta";
-import TwoInitialLines from "./components/two-initial-lines";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingLayout from "./layouts/landing-layout";
-import TicketForm from "./components/ticket-form";
+import LandingPage from "./components/landing-page";
+import UploadDocuments from "./components/upload-documents";
+import CustomersTable from "./components/customers-table";
 
 function App() {
-  const [showTicketForm, setShowTicketForm] = useState(false);
-
-  if (showTicketForm) {
-    return (
-      <LandingLayout>
-        <TicketForm onBack={() => setShowTicketForm(false)} />
-      </LandingLayout>
-    );
-  }
-
   return (
-    <LandingLayout>
-      <TwoInitialLines />
-      <EventLogo />
-      <EventDetails />
-      <FirstCta onBuyTickets={() => setShowTicketForm(true)} />
-      <EventActivity />
-      <EventActivityExtended />
-      <OneMiddleLine />
-      <Performances />
-      <Menu />
-      <SecondCta onBuyTickets={() => setShowTicketForm(true)} />
-      <Partners />
-    </LandingLayout>
+    <Router>
+      <LandingLayout>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/upload-documents/:uid" element={<UploadDocuments />} />
+          <Route path="/admin" element={<CustomersTable />} />
+        </Routes>
+      </LandingLayout>
+    </Router>
   );
 }
 

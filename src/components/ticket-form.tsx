@@ -1,5 +1,5 @@
-import { ArrowDownRight } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { ArrowDownRight, CheckCircle } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import Button from "./ui/button";
 import TwoInitialLines from "./two-initial-lines";
 import EventLogo from "./event-logo";
@@ -10,13 +10,59 @@ interface TicketFormProps {
   onBack: () => void;
 }
 
+interface FormData {
+  name_surname: string;
+  email: string;
+  phone: string;
+  tickets: number;
+}
+
 export default function TicketForm({ onBack }: TicketFormProps) {
   const formRef = useRef<HTMLElement>(null);
+  const [formData, setFormData] = useState<FormData>({
+    name_surname: '',
+    email: '',
+    phone: '',
+    tickets: 1
+  });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: name === 'tickets' ? Number(value) : value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí iría la lógica de envío del formulario
-    console.log("Formulario enviado");
+    
+    setSubmitting(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/submit-form/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        const errorData = await response.json();
+        setError(errorData.message || 'Error al enviar el formulario');
+      }
+    } catch (err) {
+      setError('Error de conexión. Por favor, inténtalo de nuevo.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   useEffect(() => {
@@ -25,6 +71,45 @@ export default function TicketForm({ onBack }: TicketFormProps) {
       formRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, []);
+
+  if (submitted) {
+    return (
+      <>
+        <TwoInitialLines />
+        <EventLogo onClick={onBack} />
+        <EventDetails />
+        
+        <section ref={formRef} className="border-y-[1px] mt-8 py-8 px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <CheckCircle className="mx-auto w-16 h-16 text-green-600 mb-6" />
+            <h1 className="text-3xl md:text-4xl font-bold text-green-600 mb-6">
+              ¡FORMULARIO ENVIADO CORRECTAMENTE!
+            </h1>
+            <p className="text-lg mb-8 text-green-600">
+              Hemos recibido tu solicitud de entradas. Te enviaremos un correo con la información de pago y el enlace para subir tu justificante.
+            </p>
+            <p className="text-xl font-bold text-red-600 mb-4">
+              Revisa tu bandeja de entrada (y spam) en los próximos minutos.
+            </p>
+            <Button onClick={onBack} className="text-lg">
+              Volver al inicio
+            </Button>
+          </div>
+        </section>
+        
+        <section className="flex gap-6 items-center justify-around text-center mt-6 pb-6 flex-wrap border-b-[1px]">
+          <p className="text-center font-bold text-2xl tracking-widest">28 JUN</p>
+          <p className="text-center font-bold tracking-widest">
+            Te esperamos el 28 de junio a las 13h. Reserva tu entrada <br /> y
+            únete a esta causa con mucho arte y mucha solidaridad.
+          </p>
+          <p className="text-center font-bold text-2xl tracking-widest">13H</p>
+        </section>
+        
+        <Partners />
+      </>
+    );
+  }
 
   return (
     <>
@@ -50,6 +135,9 @@ export default function TicketForm({ onBack }: TicketFormProps) {
               </label>
               <input
                 type="text"
+                name="name_surname"
+                value={formData.name_surname}
+                onChange={handleInputChange}
                 required
                 className="w-full border-b-2 border-red-600 bg-transparent pb-2 text-lg focus:outline-none focus:border-red-800"
               />
@@ -61,6 +149,9 @@ export default function TicketForm({ onBack }: TicketFormProps) {
               </label>
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 required
                 className="w-full border-b-2 border-red-600 bg-transparent pb-2 text-lg focus:outline-none focus:border-red-800"
               />
@@ -72,6 +163,9 @@ export default function TicketForm({ onBack }: TicketFormProps) {
               </label>
               <input
                 type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
                 required
                 className="w-full border-b-2 border-red-600 bg-transparent pb-2 text-lg focus:outline-none focus:border-red-800"
               />
@@ -83,6 +177,9 @@ export default function TicketForm({ onBack }: TicketFormProps) {
               </label>
               <input
                 type="number"
+                name="tickets"
+                value={formData.tickets}
+                onChange={handleInputChange}
                 min="1"
                 max="10"
                 required
@@ -90,9 +187,15 @@ export default function TicketForm({ onBack }: TicketFormProps) {
               />
             </div>
 
+            {error && (
+              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-red-600 font-bold">{error}</p>
+              </div>
+            )}
+
             <div className="flex flex-col sm:flex-row items-center gap-6 pt-8">
-              <Button type="submit" className="text-lg">
-                ENVIAR <ArrowDownRight />
+              <Button type="submit" className="text-lg" disabled={submitting}>
+                {submitting ? 'ENVIANDO...' : 'ENVIAR'} <ArrowDownRight />
               </Button>
               
               <p className="text-xl font-bold text-red-600">
