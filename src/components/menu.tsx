@@ -138,9 +138,9 @@ export default function Menu() {
           </Button>
 
           <p className="mt-5">
-            Además del menú, habrá más sorpresas a lo largo del evento. <br />{" "}
-            Y, por supuesto, para los más fiesteros, contaremos con snacks fríos
-            <br /> para reponer fuerzas y seguir bailando.
+            Además del menú, habrá más sorpresas a lo largo del evento. Y, por
+            supuesto, para los más fiesteros, contaremos con snacks fríos para
+            reponer fuerzas y seguir bailando.
           </p>
         </div>
       </section>
