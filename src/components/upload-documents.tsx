@@ -61,7 +61,7 @@ export default function UploadDocuments({ onBack }: UploadDocumentsProps) {
       const formData = new FormData();
       formData.append('justificante', selectedFile);
 
-      const response = await fetch(`/api/upload-receipt/${uid}/`, {
+      const response = await fetch(`https://laherencia-api-502669222749.europe-west1.run.app/api/upload-receipt/${uid}/`, {
         method: 'POST',
         body: formData,
       });
