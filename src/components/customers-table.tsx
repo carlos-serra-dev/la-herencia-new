@@ -14,7 +14,7 @@ interface Customer {
   tickets: number;
   state: string;
   state_display_spanish: string;
-  justificante: { original_url: string } | null;
+  justificante: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -97,8 +97,8 @@ export default function CustomersTable({ onBack }: CustomersTableProps) {
   };
 
   const handleViewJustificante = (customer: Customer) => {
-    if (customer.justificante && customer.justificante.original_url) {
-      window.open(customer.justificante.original_url, '_blank');
+    if (customer.justificante) {
+      window.open(customer.justificante, '_blank');
     }
   };
 
@@ -296,7 +296,7 @@ export default function CustomersTable({ onBack }: CustomersTableProps) {
                         {formatDate(customer.created_at)}
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap">
-                        {customer.justificante && customer.justificante.original_url ? (
+                        {customer.justificante ? (
                           <Button
                             onClick={() => handleViewJustificante(customer)}
                             className="!bg-green-600 hover:!bg-green-700 !text-white !px-3 !py-1 !text-sm"
