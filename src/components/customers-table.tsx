@@ -42,7 +42,8 @@ export default function CustomersTable({ onBack }: CustomersTableProps) {
         setLoading(true);
         console.log('Haciendo petición a /api/customers...'); // Debug
         
-        const response = await fetch('https://laherencia-api-502669222749.europe-west1.run.app/api/customers');
+
+        const response = await fetch('https://la-herencia-api-502669222749.europe-west1.run.app/api/customers');
         console.log('Respuesta:', response.status, response.statusText); // Debug
         
         if (response.ok) {
@@ -107,7 +108,7 @@ export default function CustomersTable({ onBack }: CustomersTableProps) {
     setSuccessMessage(null);
 
     try {
-      const response = await fetch(`https://laherencia-api-502669222749.europe-west1.run.app/api/confirm-customer/${customer.id}/`, {
+      const response = await fetch(`https://la-herencia-api-502669222749.europe-west1.run.app/api/confirm-customer/${customer.id}/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

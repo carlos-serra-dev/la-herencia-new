@@ -45,7 +45,7 @@ export default function TicketForm({ onBack }: TicketFormProps) {
     setError(null);
 
     try {
-      const response = await fetch('https://laherencia-api-502669222749.europe-west1.run.app/api/submit-form/', {
+      const response = await fetch('https://la-herencia-api-502669222749.europe-west1.run.app/api/submit-form/', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
