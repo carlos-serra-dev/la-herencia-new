@@ -13,7 +13,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/comprar-entradas" element={<ComprarEntradas />} />
           <Route path="/upload-documents/:uid" element={<UploadDocuments />} />
-          <Route path="/admin" element={<CustomersTable />} />
+          <Route path="/admin-9f8b2c7a" element={<CustomersTable />} />
         </Routes>
       </LandingLayout>
     </Router>
