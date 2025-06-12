@@ -24,13 +24,13 @@ export default function LandingPage() {
       <TwoInitialLines />
       <EventLogo />
       <EventDetails />
-      <FirstCta onBuyTickets={() => setShowTicketForm(true)} />
+      <FirstCta />
       <EventActivity />
       <EventActivityExtended />
       <OneMiddleLine />
       <Performances />
       <Menu />
-      <SecondCta onBuyTickets={() => setShowTicketForm(true)} />
+      <SecondCta />
       <Partners />
     </>
   );
