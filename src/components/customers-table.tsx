@@ -309,20 +309,14 @@ export default function CustomersTable({ onBack }: CustomersTableProps) {
                         )}
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap">
-                        {customer.state === 'pending_confirmation' ? (
-                          <Button
-                            onClick={() => handleConfirmPayment(customer)}
-                            disabled={confirmingCustomer === customer.id}
-                            className="!bg-blue-600 hover:!bg-blue-700 !text-white !px-3 !py-1 !text-sm"
-                          >
-                            <CheckCircle className="w-4 h-4 mr-1" />
-                            {confirmingCustomer === customer.id ? 'Confirmando...' : 'Confirmar Pago'}
-                          </Button>
-                        ) : (
-                          <span className="text-sm text-gray-400">
-                            {customer.state === 'confirmed' ? 'Confirmado' : 'N/A'}
-                          </span>
-                        )}
+                        <Button
+                          onClick={() => handleConfirmPayment(customer)}
+                          disabled={confirmingCustomer === customer.id}
+                          className="!bg-blue-600 hover:!bg-blue-700 !text-white !px-3 !py-1 !text-sm"
+                        >
+                          <CheckCircle className="w-4 h-4 mr-1" />
+                          {confirmingCustomer === customer.id ? 'Enviando...' : 'Enviar entradas'}
+                        </Button>
                       </td>
                     </tr>
                   ))}
