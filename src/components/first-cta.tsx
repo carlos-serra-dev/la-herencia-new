@@ -24,11 +24,12 @@ export default function FirstCta() {
         </div>
 
         <div className="sm:w-5/12 flex items-center md:justify-center pb-6 sm:p-6">
-          <Button>
-            COMPRAR ENTRADAS{" "}
-            <ArrowDownRight width={40} height={40} strokeWidth={1} />
-          </Button>
-
+          <Link to="#">
+            <Button>
+              COMPRAR ENTRADAS{" "}
+              <ArrowDownRight width={40} height={40} strokeWidth={1} />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -21,10 +21,12 @@ export default function SecondCta() {
         </div>
 
         <div className="flex items-center md:justify-center pb-6 md:pb-0 md:w-1/2">
-          <Button className="text-lg font-bold">
+          <Link to="#">
+            <Button className="text-lg font-bold">
               COMPRAR ENTRADAS{" "}
               <ArrowDownRight width={40} height={40} strokeWidth={1} />
-          </Button>
+            </Button>
+          </Link>
         </div>
       </section>
 
