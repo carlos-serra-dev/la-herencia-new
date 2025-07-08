@@ -198,7 +198,7 @@ export default function UploadDocuments({ onBack }: UploadDocumentsProps) {
               </Button>
               
               <p className="text-xl font-bold text-red-600">
-                ¡TE ESPERAMOS EL 28 DE JUNIO!
+                ¡TE ESPERAMOS EL 7 DE MARZO!
               </p>
             </div>
           </form>
@@ -206,10 +206,10 @@ export default function UploadDocuments({ onBack }: UploadDocumentsProps) {
       </section>
 
       <section className="flex gap-6 items-center justify-around text-center mt-6 pb-6 flex-wrap border-b-[1px]">
-        <p className="text-center font-bold text-2xl tracking-widest">28 JUN</p>
+        <p className="text-center font-bold text-2xl tracking-widest">7 MAR</p>
 
         <p className="text-center font-bold tracking-widest">
-          Te esperamos el 28 de junio a las 13h. Reserva tu entrada <br /> y
+          Te esperamos el 7 de marzo a las 13h. Reserva tu entrada <br /> y
           únete a esta causa con mucho arte y mucha solidaridad.
         </p>
 

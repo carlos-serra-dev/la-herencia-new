@@ -10,7 +10,7 @@ export default function FirstCta() {
 
         <div className="w-auto flex items-center">
           <p className="text-2xl font-black font-stretch-condensed tracking-widest py-6 sm:p-6">
-            ¡EL 28 DE JUNIO NOS VAMOS A LA FERIA!
+            ¡EL 7 DE MARZO NOS VAMOS A LA FERIA!
           </p>
         </div>
       </div>
@@ -24,7 +24,7 @@ export default function FirstCta() {
         </div>
 
         <div className="sm:w-5/12 flex items-center md:justify-center pb-6 sm:p-6">
-          <Link to="#">
+          <Link to="/comprar-entradas">
             <Button>
               COMPRAR ENTRADAS{" "}
               <ArrowDownRight width={40} height={40} strokeWidth={1} />
