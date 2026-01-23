@@ -14,9 +14,9 @@ export default function EventActivityExtended() {
         </li>
 
         <li className="text-sm font-medium">
-          Todo lo recaudado irá destinado a la Fundación DAR DE SÍ, en apoyo a
-          su proyecto de construcción del Centro "Lola del Pasico" gestionado
-          por PROMETEO.
+          Gala con carácter benéfico destinada a la Fundación DAR DE SÍ, 
+          en apoyo a su proyecto de construcción del Centro "Lola del Pasico", 
+          gestionado por PROMETEO.
         </li>
       </ul>
     </section>
