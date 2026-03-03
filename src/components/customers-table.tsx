@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { Search, Filter, Eye, CheckCircle } from "lucide-react";
+import { Search, Filter, Eye, CheckCircle, Download } from "lucide-react";
 import Button from "./ui/button";
 import TwoInitialLines from "./two-initial-lines";
 import EventLogo from "./event-logo";
 import EventDetails from "./event-details";
 import Partners from "./Partners";
+
+const API_BASE_URL = "https://la-herencia-api-502669222749.europe-west1.run.app";
 
 interface Customer {
   id: number;
@@ -29,8 +31,9 @@ export default function CustomersTable({ onBack }: CustomersTableProps) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [confirmingCustomer, setConfirmingCustomer] = useState<number | null>(null);
+  const [downloadingExcel, setDownloadingExcel] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
-  
+
   // Filtros
   const [searchTerm, setSearchTerm] = useState("");
   const [stateFilter, setStateFilter] = useState("all");
@@ -41,15 +44,15 @@ export default function CustomersTable({ onBack }: CustomersTableProps) {
       try {
         setLoading(true);
         console.log('Haciendo petición a /api/customers...'); // Debug
-        
 
-        const response = await fetch('https://la-herencia-api-502669222749.europe-west1.run.app/api/customers');
+
+        const response = await fetch(`${API_BASE_URL}/api/customers`);
         console.log('Respuesta:', response.status, response.statusText); // Debug
-        
+
         if (response.ok) {
           const data = await response.json();
           console.log('Datos recibidos:', data); // Debug
-          
+
           // La API devuelve {count: X, customers: [...]}
           setCustomers(data.customers || []);
           setFilteredCustomers(data.customers || []);
@@ -108,7 +111,7 @@ export default function CustomersTable({ onBack }: CustomersTableProps) {
     setSuccessMessage(null);
 
     try {
-      const response = await fetch(`https://la-herencia-api-502669222749.europe-west1.run.app/api/confirm-customer/${customer.id}/`, {
+      const response = await fetch(`${API_BASE_URL}/api/confirm-customer/${customer.id}/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -118,9 +121,9 @@ export default function CustomersTable({ onBack }: CustomersTableProps) {
       if (response.ok) {
         setSuccessMessage('Entrada enviada');
         // Actualizar el estado del cliente en la lista
-        setCustomers(prevCustomers => 
-          prevCustomers.map(c => 
-            c.id === customer.id 
+        setCustomers(prevCustomers =>
+          prevCustomers.map(c =>
+            c.id === customer.id
               ? { ...c, state: 'confirmed', state_display_spanish: 'Confirmado' }
               : c
           )
@@ -141,7 +144,7 @@ export default function CustomersTable({ onBack }: CustomersTableProps) {
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('es-ES', {
       day: '2-digit',
-      month: '2-digit', 
+      month: '2-digit',
       year: 'numeric',
       hour: '2-digit',
       minute: '2-digit'
@@ -163,6 +166,47 @@ export default function CustomersTable({ onBack }: CustomersTableProps) {
     }
   };
 
+  const handleDownloadEntriesExcel = async () => {
+    setDownloadingExcel(true);
+    setError(null);
+    setSuccessMessage(null);
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/entries-export/`);
+
+      if (!response.ok) {
+        throw new Error(`Error HTTP ${response.status}`);
+      }
+
+      const contentDisposition = response.headers.get('content-disposition');
+      let fileName = 'entradas_clientes.csv';
+
+      if (contentDisposition) {
+        const fileNameMatch = contentDisposition.match(/filename="(.+)"/i);
+        if (fileNameMatch?.[1]) {
+          fileName = fileNameMatch[1];
+        }
+      }
+
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
+
+      setSuccessMessage('Excel descargado correctamente');
+      setTimeout(() => setSuccessMessage(null), 3000);
+    } catch (err) {
+      setError('Error al descargar el Excel');
+    } finally {
+      setDownloadingExcel(false);
+    }
+  };
+
   return (
     <>
       <TwoInitialLines />
@@ -174,7 +218,7 @@ export default function CustomersTable({ onBack }: CustomersTableProps) {
           <h1 className="text-3xl md:text-4xl font-bold text-red-600 mb-6 text-center">
             GESTIÓN DE CLIENTES
           </h1>
-          
+
           <p className="text-lg mb-8 text-center text-red-600">
             Administra las reservas y justificantes de pago de los clientes.
           </p>
@@ -194,7 +238,7 @@ export default function CustomersTable({ onBack }: CustomersTableProps) {
 
           {/* Filtros */}
           <div className="bg-gray-50 p-6 rounded-lg mb-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {/* Búsqueda */}
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
@@ -224,10 +268,23 @@ export default function CustomersTable({ onBack }: CustomersTableProps) {
               </div>
 
               {/* Contador de resultados */}
-              <div className="flex items-center justify-center bg-white rounded-lg px-4 py-2 border">
+              <div className="flex items-center justify-center bg-white rounded-lg px-4 py-2 border border-gray-300">
                 <span className="font-bold text-red-600">
                   {filteredCustomers.length} cliente{filteredCustomers.length !== 1 ? 's' : ''}
                 </span>
+              </div>
+
+              {/* Descargar Excel */}
+              <div className="flex items-center">
+                <button
+                  type="button"
+                  onClick={handleDownloadEntriesExcel}
+                  disabled={downloadingExcel}
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-white border border-red-300 rounded-lg text-sm font-semibold text-red-600 transition-colors hover:bg-red-50 hover:border-red-500 focus:ring-2 focus:ring-red-500 focus:border-transparent disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  <Download className="w-4 h-4 shrink-0" />
+                  {downloadingExcel ? 'Descargando...' : 'Descargar Excel'}
+                </button>
               </div>
             </div>
           </div>
@@ -336,4 +393,4 @@ export default function CustomersTable({ onBack }: CustomersTableProps) {
       <Partners />
     </>
   );
-} 
+}
