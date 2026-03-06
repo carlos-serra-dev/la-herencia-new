@@ -1,6 +1,4 @@
-import { ArrowDownRight } from "lucide-react";
 import Button from "./ui/button";
-import { Link } from "react-router";
 
 export default function SecondCta() {
   return (
@@ -21,12 +19,9 @@ export default function SecondCta() {
         </div>
 
         <div className="flex items-center md:justify-center pb-6 md:pb-0 md:w-1/2">
-          <Link to="/comprar-entradas">
-            <Button className="text-lg font-bold">
-              COMPRAR ENTRADAS{" "}
-              <ArrowDownRight width={40} height={40} strokeWidth={1} />
-            </Button>
-          </Link>
+          <Button className="text-lg font-bold opacity-50 cursor-not-allowed" disabled>
+            ENTRADAS AGOTADAS
+          </Button>
         </div>
       </section>
 
