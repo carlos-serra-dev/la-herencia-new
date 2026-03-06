@@ -1,6 +1,4 @@
 import Button from "./ui/button";
-import { ArrowDownRight } from "lucide-react";
-import { Link } from "react-router";
 
 export default function FirstCta() {
   return (
@@ -24,12 +22,9 @@ export default function FirstCta() {
         </div>
 
         <div className="sm:w-5/12 flex items-center md:justify-center pb-6 sm:p-6">
-          <Link to="/comprar-entradas">
-            <Button>
-              COMPRAR ENTRADAS{" "}
-              <ArrowDownRight width={40} height={40} strokeWidth={1} />
-            </Button>
-          </Link>
+          <Button disabled className="opacity-50 cursor-not-allowed">
+            ENTRADAS AGOTADAS
+          </Button>
         </div>
       </div>
     </section>
